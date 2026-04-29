@@ -510,6 +510,34 @@
     }
     .team-links a:hover { color: var(--accent); border-color: var(--accent); }
 
+    /* PARTNERS */
+    .partners { text-align: center; }
+    .partners-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+    .partner-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem 2rem;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    .partner-logo img {
+      height: 100px;
+      width: auto;
+      object-fit: contain;
+    }
+    .partner-logo:hover img {
+      filter: grayscale(0%) brightness(1);
+      opacity: 1;
+    }
+
     /* PUBLICATIONS */
     .pub-list { list-style: none; margin-top: 3rem; }
     .pub-item {
@@ -790,8 +818,8 @@
       </a>
       <button class="mobile-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Menu">☰</button>
       <ul>
-        <li><a href="#capabilities">Technology</a></li>
         <li><a href="#applications">Applications</a></li>
+        <li><a href="#capabilities">Technology</a></li>
         <li><a href="#team">Team</a></li>
         <li><a href="#publications">Research</a></li>
         <li><a href="#contact" class="nav-cta">Contact Us</a></li>
@@ -1067,35 +1095,29 @@
       <div class="video-grid">
         <div class="video-card reveal">
           <div class="embed-wrap">
-            <iframe src="https://player.vimeo.com/video/1187101526?autoplay=1&loop=1&muted=1&background=1" loading="lazy" allowfullscreen></iframe>
+            <iframe src="https://player.vimeo.com/video/1187707051?autoplay=1&loop=1&muted=1&background=1" loading="lazy" allowfullscreen></iframe>
           </div>
           <div class="video-meta">
-            <a href="https://vimeo.com/1187101526" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
-                <h3>Copper Laser Welding</h3>
-                <p>Simulation vs. Synchrotron X-ray at 20,000 fps</p>
-            </a>
+            <h3>Copper Laser Welding</h3>
+            <p>Simulation vs. Synchrotron X-ray at 20,000 fps</p>
           </div>
         </div>
         <div class="video-card reveal">
           <div class="embed-wrap">
-            <iframe src="https://player.vimeo.com/video/1187107303?autoplay=1&loop=1&muted=1&background=1" loading="lazy" allowfullscreen></iframe>
+            <iframe src="https://player.vimeo.com/video/1187707443?autoplay=1&loop=1&muted=1&background=1" loading="lazy" allowfullscreen></iframe>
           </div>
           <div class="video-meta">
-            <a href="https://vimeo.com/1187107303" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
-                <h3>Multilayer Powder Bed Fusion</h3>
-                <p>Simulated from First Principles</p>
-            </a>
+            <h3>Multilayer Powder Bed Fusion</h3>
+            <p>Simulated from First Principles</p>
           </div>
         </div>
         <div class="video-card reveal">
           <div class="embed-wrap">
-            <iframe src="https://player.vimeo.com/video/1187107288?autoplay=1&loop=1&muted=1&background=1" loading="lazy" allowfullscreen></iframe>
+            <iframe src="https://player.vimeo.com/video/1187707423?autoplay=1&loop=1&muted=1&background=1" loading="lazy" allowfullscreen></iframe>
           </div>
           <div class="video-meta">
-            <a href="https://vimeo.com/1187107288" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
-                <h3>Picosecond Laser Ablation of Fused Silica</h3>
-                <p>From Free Electrons to Hydrodynamic Removal</p>
-            </a>
+            <h3>Picosecond Laser Ablation of Fused Silica</h3>
+            <p>From Free Electrons to Hydrodynamic Removal</p>
           </div>
         </div>
       </div>
@@ -1379,6 +1401,24 @@
   <div class="section-divider"></div>
 
   <div class="container">
+    <section id="partners" class="partners">
+      <div class="reveal">
+        <h2>Partners</h2>
+      </div>
+      <div class="partners-grid reveal">
+        <a href="https://www.tuwien.at" target="_blank" rel="noopener" class="partner-logo">
+          <img src="tuwien_logo.png" alt="TU Wien Logo">
+        </a>
+        <a href="https://www.spinoff-factory.at" target="_blank" rel="noopener" class="partner-logo">
+          <img src="spinoff_factory_logo.png" alt="Spinoff Factory Logo">
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <div class="container">
     <section id="contact" class="cta-section">
       <div class="reveal">
         <div class="section-tag">Get Started</div>
@@ -1443,6 +1483,8 @@
           <p style="margin-top: 1rem;"><strong>inSilicoPhysics GmbH in Gründung</strong><br>
           Firmenbuchnummer: ausstehend<br>
           UID-Nr.: ausstehend</p>
+          <p style="margin-top: 1rem;"><strong>Anwendbare Rechtsvorschriften</strong><br>
+          Gewerbeordnung (<a href="https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=10007517" target="_blank" rel="noopener">ris.bka.gv.at</a>)</p>
         </div>
       </div>
     </section>
