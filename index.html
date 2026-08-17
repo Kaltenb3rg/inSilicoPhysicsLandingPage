@@ -27,6 +27,7 @@
       --border-light: #2a2f40;
       --fg: #e8eaf0;
       --fg-muted: #7c8299;
+      --fg-body: #a3a9c2;
       --fg-dim: #4a5068;
       --accent: #3b9eff;
       --accent-glow: rgba(59, 158, 255, 0.15);
@@ -53,6 +54,25 @@
       color: var(--bg-deep);
     }
 
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    section[id] { scroll-margin-top: 96px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+
     /* NAV */
     nav {
       position: fixed;
@@ -67,36 +87,41 @@
     .nav-inner {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0.05rem 0.5rem;
+      padding: 0.6rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 1rem;
     }
     .logo {
       font-family: var(--sans);
       font-weight: 600;
-      font-size: 2.7rem;
+      font-size: clamp(1.15rem, 3.2vw, 1.7rem);
       text-decoration: none;
       color: var(--fg);
       letter-spacing: -0.02em;
       display: flex;
       align-items: center;
-      gap: 0.7rem;
+      gap: clamp(0.5rem, 1.5vw, 0.85rem);
+      min-width: 0;
+      flex-shrink: 1;
     }
     .logo-mark {
-      width: 140px;
-      height: 140px;
+      width: clamp(52px, 9vw, 88px);
+      height: clamp(52px, 9vw, 88px);
       border-radius: 10px;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
     }
     .logo-mark img {
       width: 100%;
       height: 100%;
       object-fit: contain;
     }
+    .logo-word { white-space: nowrap; }
     nav ul { list-style: none; display: flex; gap: 2rem; align-items: center; }
     nav ul a {
       text-decoration: none;
@@ -269,15 +294,15 @@
     }
     .cap-card h3 { margin-bottom: 0.6rem; }
     .cap-card p {
-      font-size: 0.88rem;
-      color: var(--fg-muted);
-      line-height: 1.65;
+      font-size: 0.96rem;
+      color: var(--fg-body);
+      line-height: 1.7;
     }
     .cap-tag {
       display: inline-block;
       font-family: var(--mono);
-      font-size: 0.65rem;
-      color: var(--fg-dim);
+      font-size: 0.68rem;
+      color: var(--fg-muted);
       background: rgba(255,255,255,0.03);
       border: 1px solid var(--border);
       padding: 0.2rem 0.6rem;
@@ -327,8 +352,8 @@
       margin-bottom: 0.4rem;
     }
     .app-category-header p {
-      font-size: 0.9rem;
-      color: var(--fg-muted);
+      font-size: 0.95rem;
+      color: var(--fg-body);
       line-height: 1.6;
     }
     .app-sub-list { padding: 0.5rem 0; }
@@ -340,14 +365,14 @@
     .app-sub-item:last-child { border-bottom: none; }
     .app-sub-item:hover { background: var(--bg-card-hover); }
     .app-sub-item h4 {
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-weight: 500;
       color: var(--fg);
     }
     .app-sub-item p {
-      font-size: 0.8rem;
-      color: var(--fg-dim);
-      line-height: 1.55;
+      font-size: 0.9rem;
+      color: var(--fg-body);
+      line-height: 1.6;
     }
     .app-tags {
       display: flex;
@@ -357,7 +382,7 @@
     }
     .app-tags span {
       font-family: var(--mono);
-      font-size: 0.6rem;
+      font-size: 0.63rem;
       color: var(--fg-muted);
       background: rgba(255,255,255,0.03);
       border: 1px solid var(--border);
@@ -398,8 +423,8 @@
     .video-card .video-meta { padding: 1.25rem 1.5rem; }
     .video-card h3 { font-size: 1rem; margin-bottom: 0.3rem; }
     .video-card p {
-      font-size: 0.8rem;
-      color: var(--fg-dim);
+      font-size: 0.85rem;
+      color: var(--fg-muted);
       font-family: var(--mono);
     }
 
@@ -480,8 +505,8 @@
       margin-bottom: 0.5rem;
     }
     .team-card-front .team-hint {
-      font-size: 0.7rem;
-      color: var(--fg-dim);
+      font-size: 0.72rem;
+      color: var(--fg-muted);
       margin-top: 0.75rem;
     }
     .team-card-back h3 {
@@ -489,8 +514,8 @@
       margin-bottom: 0.75rem;
     }
     .team-card-back p {
-      font-size: 0.82rem;
-      color: var(--fg-muted);
+      font-size: 0.9rem;
+      color: var(--fg-body);
       line-height: 1.65;
       font-style: italic;
     }
@@ -501,14 +526,44 @@
       margin-top: 1rem;
     }
     .team-links a {
-      color: var(--fg-dim);
+      color: var(--fg-muted);
       text-decoration: none;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       transition: color 0.3s;
       border-bottom: 1px solid var(--border);
       padding-bottom: 1px;
     }
     .team-links a:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* STATUS */
+    .status-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+      list-style: none;
+    }
+    .status-item {
+      position: relative;
+      padding: 1.5rem 1.25rem 1.35rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .status-item:hover { border-color: var(--border-light); background: var(--bg-card-hover); }
+    .status-date {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+    .status-item h3 { margin-bottom: 0.5rem; font-size: 1rem; }
+    .status-item p { font-size: 0.86rem; color: var(--fg-body); line-height: 1.6; }
+    .status-item.upcoming { border-style: dashed; }
+    .status-item.upcoming .status-date { color: var(--fg-muted); }
 
     /* PARTNERS */
     .partners { text-align: center; }
@@ -560,18 +615,24 @@
       cursor: pointer;
       user-select: none;
       transition: background 0.3s;
+      background: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-family: inherit;
+      color: inherit;
     }
     .pub-header:hover { background: var(--bg-card); }
     .pub-year {
       font-family: var(--mono);
       font-size: 0.8rem;
-      color: var(--fg-dim);
+      color: var(--fg-muted);
     }
-    .pub-title { font-weight: 500; font-size: 1rem; margin-bottom: 0.2rem; }
-    .pub-description { font-size: 0.8rem; color: var(--fg-muted); }
+    .pub-title { font-weight: 500; font-size: 1rem; margin-bottom: 0.25rem; }
+    .pub-description { font-size: 0.85rem; color: var(--fg-body); }
     .pub-toggle {
       font-size: 1.2rem;
-      color: var(--fg-dim);
+      color: var(--fg-muted);
       transition: transform 0.3s, color 0.3s;
       flex-shrink: 0;
     }
@@ -588,8 +649,8 @@
       border-top: 1px solid var(--border);
     }
     .pub-abstract {
-      font-size: 0.85rem;
-      color: var(--fg-muted);
+      font-size: 0.9rem;
+      color: var(--fg-body);
       line-height: 1.75;
       margin: 1.25rem 0;
     }
@@ -647,7 +708,7 @@
     .contact-item .contact-label {
       font-family: var(--mono);
       font-size: 0.7rem;
-      color: var(--fg-dim);
+      color: var(--fg-muted);
       letter-spacing: 0.08em;
       text-transform: uppercase;
       margin-bottom: 0.35rem;
@@ -671,8 +732,8 @@
     .form-group { display: flex; flex-direction: column; gap: 0.35rem; }
     .form-group label {
       font-family: var(--mono);
-      font-size: 0.7rem;
-      color: var(--fg-dim);
+      font-size: 0.72rem;
+      color: var(--fg-muted);
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
@@ -695,7 +756,7 @@
     }
     .form-group input::placeholder,
     .form-group textarea::placeholder {
-      color: var(--fg-dim);
+      color: var(--fg-muted);
     }
     .contact-form .btn { align-self: flex-start; margin-top: 0.5rem; }
     .form-status {
@@ -709,8 +770,8 @@
     /* IMPRESSUM */
     .impressum {
       padding: 4rem 0;
-      font-size: 0.82rem;
-      color: var(--fg-muted);
+      font-size: 0.85rem;
+      color: var(--fg-body);
       line-height: 1.7;
     }
     .impressum h3 {
@@ -736,8 +797,8 @@
       text-align: center;
     }
     footer p {
-      font-size: 0.75rem;
-      color: var(--fg-dim);
+      font-size: 0.78rem;
+      color: var(--fg-muted);
       font-family: var(--mono);
     }
 
@@ -765,15 +826,21 @@
       background: none;
       border: none;
       color: var(--fg);
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       cursor: pointer;
-      padding: 0.25rem;
+      padding: 0.5rem;
+      line-height: 1;
+      flex-shrink: 0;
     }
 
     @media (max-width: 960px) {
       .cap-grid { grid-template-columns: 1fr 1fr; }
       .team-grid { grid-template-columns: 1fr 1fr; }
       .app-categories { grid-template-columns: 1fr; }
+      .status-timeline { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 860px) {
+      .nav-inner { padding: 0.6rem 1.25rem; }
     }
     @media (max-width: 640px) {
       .cap-grid { grid-template-columns: 1fr; }
@@ -783,22 +850,35 @@
       .logo-mark { width: 48px; height: 48px; }
       .hero { padding-top: 8rem; padding-bottom: 4rem; }
       section { padding: 4rem 0; }
-      .nav-inner { padding: 0.8rem 1.25rem; }
       .container { padding: 0 1.25rem; }
-      .mobile-toggle { display: block; }
+    }
+    .mobile-toggle { display: block; }
       nav ul {
         display: none;
         position: absolute;
         top: 100%;
         left: 0; right: 0;
-        background: rgba(8, 9, 12, 0.96);
-        backdrop-filter: blur(20px);
+        background: var(--bg-deep);
         flex-direction: column;
+        align-items: flex-start;
         padding: 1.5rem 2rem;
-        gap: 1rem;
+        gap: 1.25rem;
         border-bottom: 1px solid var(--border);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        max-height: calc(100vh - 100%);
+        overflow-y: auto;
       }
       nav ul.open { display: flex; }
+      nav ul li { width: 100%; }
+      nav ul a { display: block; padding: 0.35rem 0; font-size: 1rem; }
+      .nav-cta { display: inline-block !important; }
+    }
+    @media (max-width: 640px) {
+      .cap-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr 1fr; }
+      .hero { padding-top: 8rem; padding-bottom: 4rem; }
+      section { padding: 4rem 0; }
+      .container { padding: 0 1.25rem; }
       .pub-header { grid-template-columns: 1fr auto; gap: 0.75rem; }
       .pub-year { display: none; }
       .pub-body-inner { padding-left: 1.5rem; }
@@ -806,6 +886,7 @@
       .form-row { grid-template-columns: 1fr; }
       .impressum-grid { grid-template-columns: 1fr; gap: 1.5rem; }
       .video-grid { grid-template-columns: 1fr; }
+      .status-timeline { grid-template-columns: 1fr !important; }
     }
   </style>
 </head>
@@ -817,14 +898,15 @@
         <div class="logo-mark">
           <img src="logo.png" alt="inSilicoPhysics logo">
         </div>
-        inSilico Physics
+        <span class="logo-word">inSilico Physics</span>
       </a>
-      <button class="mobile-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Menu">☰</button>
-      <ul>
+      <button class="mobile-toggle" onclick="window.toggleNav(this)" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">☰</button>
+      <ul id="nav-menu">
         <li><a href="#applications">Applications</a></li>
         <li><a href="#capabilities">Technology</a></li>
         <li><a href="#team">Team</a></li>
         <li><a href="#publications">Research</a></li>
+        <li><a href="#status">Status</a></li>
         <li><a href="#contact" class="nav-cta">Contact Us</a></li>
       </ul>
     </div>
@@ -1098,7 +1180,7 @@
       <div class="video-grid">
         <div class="video-card reveal">
           <div class="embed-wrap">
-            <iframe src="https://player.vimeo.com/video/1187707051?autoplay=1&loop=1&muted=1&background=1" loading="lazy" allowfullscreen></iframe>
+            <iframe src="https://player.vimeo.com/video/1187707051?autoplay=1&loop=1&muted=1&background=1" loading="lazy" allowfullscreen title="Copper Laser Welding — Simulation vs. Synchrotron X-ray at 20,000 fps"></iframe>
           </div>
           <div class="video-meta">
             <h3>Copper Laser Welding</h3>
@@ -1107,7 +1189,7 @@
         </div>
         <div class="video-card reveal">
           <div class="embed-wrap">
-            <iframe src="https://player.vimeo.com/video/1187707443?autoplay=1&loop=1&muted=1&background=1" loading="lazy" allowfullscreen></iframe>
+            <iframe src="https://player.vimeo.com/video/1187707443?autoplay=1&loop=1&muted=1&background=1" loading="lazy" allowfullscreen title="Multilayer Powder Bed Fusion — Simulated from First Principles"></iframe>
           </div>
           <div class="video-meta">
             <h3>Multilayer Powder Bed Fusion</h3>
@@ -1116,7 +1198,7 @@
         </div>
         <div class="video-card reveal">
           <div class="embed-wrap">
-            <iframe src="https://player.vimeo.com/video/1187707423?autoplay=1&loop=1&muted=1&background=1" loading="lazy" allowfullscreen></iframe>
+            <iframe src="https://player.vimeo.com/video/1187707423?autoplay=1&loop=1&muted=1&background=1" loading="lazy" allowfullscreen title="Picosecond Laser Ablation of Fused Silica — From Free Electrons to Hydrodynamic Removal"></iframe>
           </div>
           <div class="video-meta">
             <h3>Picosecond Laser Ablation of Fused Silica</h3>
@@ -1137,7 +1219,7 @@
       </div>
       <div class="team-grid">
 
-        <div class="team-card reveal" onclick="this.classList.toggle('flipped')">
+        <div class="team-card reveal" tabindex="0" role="button" aria-pressed="false" onclick="window.toggleTeamCard(this)" onkeydown="window.handleTeamCardKey(event, this)">
           <div class="team-card-inner">
             <div class="team-card-front">
               <div class="team-avatar"><img src="cz.jpg" alt="Constantin Zenz"></div>
@@ -1149,14 +1231,14 @@
               <h3>Dr. Constantin Zenz</h3>
               <p>"We're building lasers faster than we're learning to use them. The bottleneck isn't power or beam shape — it's our ability to predict what they actually do."</p>
               <div class="team-links">
-                <a href="https://www.linkedin.com/in/constantinzenz/" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://scholar.google.com/citations?user=WGqDx88AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Scholar</a>
+                <a href="https://www.linkedin.com/in/constantinzenz/" target="_blank" rel="noopener" onclick="event.stopPropagation()">LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=WGqDx88AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener" onclick="event.stopPropagation()">Scholar</a>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="team-card reveal" onclick="this.classList.toggle('flipped')">
+        <div class="team-card reveal" tabindex="0" role="button" aria-pressed="false" onclick="window.toggleTeamCard(this)" onkeydown="window.handleTeamCardKey(event, this)">
           <div class="team-card-inner">
             <div class="team-card-front">
               <div class="team-avatar"><img src="mb.jpg" alt="Michele Buttazzoni"></div>
@@ -1168,14 +1250,14 @@
               <h3>Dipl.-Ing. Michele Buttazzoni</h3>
               <p>"The physics hasn't changed since Navier and Stokes. What's changed is our ability to solve it — fully coupled, in 3D, without asking reality to simplify itself."</p>
               <div class="team-links">
-                <a href="https://www.linkedin.com/in/michele-buttazzoni-207759113/" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://scholar.google.com/citations?user=kvNOimQAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Scholar</a>
+                <a href="https://www.linkedin.com/in/michele-buttazzoni-207759113/" target="_blank" rel="noopener" onclick="event.stopPropagation()">LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=kvNOimQAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener" onclick="event.stopPropagation()">Scholar</a>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="team-card reveal" onclick="this.classList.toggle('flipped')">
+        <div class="team-card reveal" tabindex="0" role="button" aria-pressed="false" onclick="window.toggleTeamCard(this)" onkeydown="window.handleTeamCardKey(event, this)">
           <div class="team-card-inner">
             <div class="team-card-front">
               <div class="team-avatar"><img src="tf.jpg" alt="Tobias Florian"></div>
@@ -1187,14 +1269,14 @@
               <h3>Dipl.-Ing. Tobias Florian</h3>
               <p>"Experiments show you what happened. Simulation shows you why. Combine both, and you see what no one else can."</p>
               <div class="team-links">
-                <a href="https://www.linkedin.com/in/tobias-florian-31b116137/" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://scholar.google.com/citations?user=TnwCOtoAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Scholar</a>
+                <a href="https://www.linkedin.com/in/tobias-florian-31b116137/" target="_blank" rel="noopener" onclick="event.stopPropagation()">LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=TnwCOtoAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener" onclick="event.stopPropagation()">Scholar</a>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="team-card reveal" onclick="this.classList.toggle('flipped')">
+        <div class="team-card reveal" tabindex="0" role="button" aria-pressed="false" onclick="window.toggleTeamCard(this)" onkeydown="window.handleTeamCardKey(event, this)">
           <div class="team-card-inner">
             <div class="team-card-front">
               <div class="team-avatar"><img src="ao.jpg" alt="Andreas Otto"></div>
@@ -1206,8 +1288,8 @@
               <h3>Prof. Dr. Andreas Otto</h3>
               <p>"The fashionable answer is AI. When you know the physics, the better answer is HI — human intelligence. No training data. No black box. Generates the very data AI depends on."</p>
               <div class="team-links">
-                <a href="https://at.linkedin.com/in/andreas-otto-ba7b65102" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://scholar.google.com/citations?user=COdLlmcAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Scholar</a>
+                <a href="https://at.linkedin.com/in/andreas-otto-ba7b65102" target="_blank" rel="noopener" onclick="event.stopPropagation()">LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=COdLlmcAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener" onclick="event.stopPropagation()">Scholar</a>
               </div>
             </div>
           </div>
@@ -1228,14 +1310,14 @@
       <ul class="pub-list">
 
         <li class="pub-item reveal">
-          <div class="pub-header" onclick="this.parentElement.classList.toggle('open')">
+          <button type="button" class="pub-header" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))" aria-expanded="false">
             <span class="pub-year">2025</span>
             <div>
               <div class="pub-title">Universal Numerical Simulation Model for Laser Material Processing</div>
               <div class="pub-description">The full methodology behind the simulation framework</div>
             </div>
             <span class="pub-toggle">+</span>
-          </div>
+          </button>
           <div class="pub-body">
             <div class="pub-body-inner">
               <p class="pub-abstract">High power lasers are used for a variety of manufacturing processes on time and length scales that cover many orders of magnitude and on different materials. The variety of processes achievable through laser-material interaction results from numerous coupled, nonlinear physical phenomena. Within this chapter, a universal model is presented that accurately simulates a broad spectrum of processes, including welding, additive manufacturing, cutting, ablation, drilling, and surface structuring, encompassing both continuous wave and ultrashort pulsed lasers and their interaction with various materials. Starting from the fundamental principles of conservation of mass, momentum, and energy, a continuum mechanical framework is introduced that captures the main multiphysical effects.</p>
@@ -1245,14 +1327,14 @@
         </li>
 
         <li class="pub-item reveal">
-          <div class="pub-header" onclick="this.parentElement.classList.toggle('open')">
+          <button type="button" class="pub-header" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))" aria-expanded="false">
             <span class="pub-year">2025</span>
             <div>
               <div class="pub-title">A critical comparison of one- and two-fluid approaches for the simulation of laser-induced melt pool formation and vaporisation</div>
               <div class="pub-description">Benchmarking the physics engine against industry-standard solvers</div>
             </div>
             <span class="pub-toggle">+</span>
-          </div>
+          </button>
           <div class="pub-body">
             <div class="pub-body-inner">
               <p class="pub-abstract">Physics-based simulations are routinely used to understand and optimize laser-based metal additive manufacturing processes. Across the wide range of model predictive capabilities and computational costs, a lack in understanding of the implications of model choice for simulation accuracy persists. We present the first detailed comparison of results obtained with a one-fluid approach (FLOW-3D) and a two-fluid approach (Mass-of-Fluid model) for the simulation of laser-induced melt pool formation and vaporisation, applied to scenarios ranging from conduction-mode melting to deep-penetration copper welding with different beam shapes.</p>
@@ -1262,14 +1344,14 @@
         </li>
 
         <li class="pub-item reveal">
-          <div class="pub-header" onclick="this.parentElement.classList.toggle('open')">
+          <button type="button" class="pub-header" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))" aria-expanded="false">
             <span class="pub-year">2025</span>
             <div>
               <div class="pub-title">Combining in situ synchrotron X-ray imaging and multiphysics simulation to reveal pore formation dynamics in laser welding of copper</div>
               <div class="pub-description">Validated against synchrotron X-ray imaging at 20,000 fps</div>
             </div>
             <span class="pub-toggle">+</span>
-          </div>
+          </button>
           <div class="pub-body">
             <div class="pub-body-inner">
               <p class="pub-abstract">Laser beam welding has emerged as a powerful tool for manufacturing copper components in electrical vehicles, electronic devices or energy storage, owing to its rapid processing capabilities. Nonetheless, the material's high thermal conductivity and low absorption of infrared light can introduce process instabilities, resulting in defects such as pores. This study employs a hybrid approach that combines in situ synchrotron X-ray imaging with compressible multiphysics process simulation to elucidate pore-forming mechanisms during laser beam welding of copper. The findings show that pore formation is driven by four different mechanisms: bulging, spiking, upwelling waves at the keyhole rear wall and melt pool ejections.</p>
@@ -1279,14 +1361,14 @@
         </li>
 
         <li class="pub-item reveal">
-          <div class="pub-header" onclick="this.parentElement.classList.toggle('open')">
+          <button type="button" class="pub-header" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))" aria-expanded="false">
             <span class="pub-year">2026</span>
             <div>
               <div class="pub-title">Ultrashort pulse laser ablation of dielectrics: Bridging the "bandgap" from free electron generation to hydrodynamic ablation</div>
               <div class="pub-description">From free electron generation to hydrodynamic ablation in glass</div>
             </div>
             <span class="pub-toggle">+</span>
-          </div>
+          </button>
           <div class="pub-body">
             <div class="pub-body-inner">
               <p class="pub-abstract">This work bridges the gap between ultrafast electronic excitation and macroscopic material removal in dielectric materials. A comprehensive simulation framework couples free electron generation via multiphoton and avalanche ionization with the subsequent hydrodynamic response of the material, capturing the full chain of events from initial laser absorption through to ablation crater formation. The model is validated against experimental ablation data for glass substrates processed with femtosecond laser pulses.</p>
@@ -1296,14 +1378,14 @@
         </li>
 
         <li class="pub-item reveal">
-          <div class="pub-header" onclick="this.parentElement.classList.toggle('open')">
+          <button type="button" class="pub-header" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))" aria-expanded="false">
             <span class="pub-year">2024</span>
             <div>
               <div class="pub-title">A compressible multiphase Mass-of-Fluid model for the simulation of laser-based manufacturing processes</div>
               <div class="pub-description">A novel compressible multiphase formulation for laser processes</div>
             </div>
             <span class="pub-toggle">+</span>
-          </div>
+          </button>
           <div class="pub-body">
             <div class="pub-body-inner">
               <p class="pub-abstract">A new model for compressible multiphase flows involving sharp interfaces and phase change is presented, that uses a variant of the Volume-of-Fluid model to track phases by advecting their respective mass, and is hence called Mass-of-Fluid model. The framework is aimed at predicting the coupled multi-physical phenomena involved in most processes encountered in laser material processing, with the aim of minimizing a priori assumptions on the nature of the process. Emphasis is put on the multiphase fluid flow model, especially on the treatment of compressibility and phase change.</p>
@@ -1313,14 +1395,14 @@
         </li>
 
         <li class="pub-item reveal">
-          <div class="pub-header" onclick="this.parentElement.classList.toggle('open')">
+          <button type="button" class="pub-header" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))" aria-expanded="false">
             <span class="pub-year">2024</span>
             <div>
               <div class="pub-title">Simulation-based process optimization of laser-based powder bed fusion by means of beam shaping</div>
               <div class="pub-description">Optimizing scan strategy and beam shape to prevent cracking</div>
             </div>
             <span class="pub-toggle">+</span>
-          </div>
+          </button>
           <div class="pub-body">
             <div class="pub-body-inner">
               <p class="pub-abstract">Laser powder bed fusion of metals (PBF-LB/M) is an additive manufacturing technique which has recently been growing in popularity in industrial use cases. However, several challenges persist, including the issue of solidification cracking observed in widely used Ni-based superalloys. Through retrofitting an existing PBF machine with a dual beam system capable of dynamic beam shaping, it is possible to overcome this issue. In this regard we propose a methodology that utilizes a numerical simulation tool to identify optimized parameters. The effectiveness of the found beam shapes was proven in experiments, where crack density was reduced to near-zero.</p>
@@ -1330,14 +1412,14 @@
         </li>
 
         <li class="pub-item reveal">
-          <div class="pub-header" onclick="this.parentElement.classList.toggle('open')">
+          <button type="button" class="pub-header" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))" aria-expanded="false">
             <span class="pub-year">2024</span>
             <div>
               <div class="pub-title">Multiphysical simulation of hot cracking in Laser-Based Powder Bed Fusion</div>
               <div class="pub-description">Predicting solidification cracking in additive manufacturing from first principles</div>
             </div>
             <span class="pub-toggle">+</span>
-          </div>
+          </button>
           <div class="pub-body">
             <div class="pub-body-inner">
               <p class="pub-abstract">This study extends an existing comprehensive computational framework to gain insight on hot cracking in the simulation of laser-based additive manufacturing via powder bed fusion. A novel approach to predict hot crack susceptibility based on vapor cavitation, building on a conceptual model akin to the Rappaz-Drezet-Gremaud criterion is introduced. Unlike conventional practices involving ex-situ evaluation of a criterion, the proposed model emerges implicitly from the underlying multiphysical modeling framework.</p>
@@ -1347,14 +1429,14 @@
         </li>
 
         <li class="pub-item reveal">
-          <div class="pub-header" onclick="this.parentElement.classList.toggle('open')">
+          <button type="button" class="pub-header" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))" aria-expanded="false">
             <span class="pub-year">2024</span>
             <div>
               <div class="pub-title">Ultra-short pulse laser ablation of metals: A comprehensive 3D simulation perspective enlightening novel process insights</div>
               <div class="pub-description">Extending the framework to femtosecond laser ablation of metals</div>
             </div>
             <span class="pub-toggle">+</span>
-          </div>
+          </button>
           <div class="pub-body">
             <div class="pub-body-inner">
               <p class="pub-abstract">Intricate dynamics in ultra-short pulse laser ablation of metals necessitate deeper process understanding. This work presents an auspicious contribution in this direction, incorporating a sophisticated three-dimensional finite-volume simulation tool, building upon our previously validated models in continuous-wave laser material processing. Atop the existing multiphysics framework, a two-temperature and a Drude absorption model has been integrated.</p>
@@ -1364,14 +1446,14 @@
         </li>
 
         <li class="pub-item reveal">
-          <div class="pub-header" onclick="this.parentElement.classList.toggle('open')">
+          <button type="button" class="pub-header" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))" aria-expanded="false">
             <span class="pub-year">2022</span>
             <div>
               <div class="pub-title">Rapid formation of high aspect ratio through holes in thin glass substrates using an engineered, QCW laser approach</div>
               <div class="pub-description">Engineered pulse shapes for high-aspect-ratio micro-drilling</div>
             </div>
             <span class="pub-toggle">+</span>
-          </div>
+          </button>
           <div class="pub-body">
             <div class="pub-body-inner">
               <p class="pub-abstract">This work investigates the rapid formation of high aspect ratio through holes in thin glass substrates using a quasi-continuous wave (QCW) laser approach. By engineering the temporal pulse shape, precise control over the drilling process is achieved, enabling high-quality micro-drilling with minimal thermal damage. The results are supported by multiphysical simulations that capture the coupled dynamics of beam propagation, absorption, and material removal.</p>
@@ -1381,14 +1463,14 @@
         </li>
 
         <li class="pub-item reveal">
-          <div class="pub-header" onclick="this.parentElement.classList.toggle('open')">
+          <button type="button" class="pub-header" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))" aria-expanded="false">
             <span class="pub-year">2021</span>
             <div>
               <div class="pub-title">A Numerical Investigation of Laser Beam Welding of Stainless Steel Sheets with a Gap</div>
               <div class="pub-description">Process optimization through secondary beam tuning</div>
             </div>
             <span class="pub-toggle">+</span>
-          </div>
+          </button>
           <div class="pub-body">
             <div class="pub-body-inner">
               <p class="pub-abstract">Keyhole laser beam welding (LBW) of 304L stainless steel sheets with a gap in between was numerically simulated with a three-dimensional, transient, multi-physical model for laser material processing based on the finite volume method (FVM). The model's ability to reproduce experimental results on a relatively coarse computational mesh within reasonable computing time, so as to serve as process optimization tool, is presented.</p>
@@ -1416,6 +1498,41 @@
           <img src="spinoff_factory_logo.png" alt="Spinoff Factory Logo">
         </a>
       </div>
+    </section>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <div class="container">
+    <section id="status">
+      <div class="reveal">
+        <div class="section-tag">Status</div>
+        <h2>Where we are</h2>
+        <p style="color: var(--fg-body); max-width: 700px; font-size: 1.02rem;">inSilicoPhysics is a young company. Here's where we stand.</p>
+      </div>
+      <ol class="status-timeline reveal">
+        <li class="status-item">
+          <span class="status-date" aria-hidden="true">2011–Today</span>
+          <h3>Research at TU Wien</h3>
+          <p>The original physics engine was developed and validated at TU Wien, widely published and well established in academia.</p>
+        </li>
+        <li class="status-item">
+          <span class="status-date" aria-hidden="true">September 2026</span>
+          <h3>Spin-out</h3>
+          <p>Founded as inSilicoPhysics GmbH, supported by Preseed - Deep Tech funding from Austria Wirtschaftsservice.</p>
+        </li>
+        <li class="status-item">
+          <span class="status-date" aria-hidden="true">2026–2027</span>
+          <h3>In development</h3>
+          <p>Turning the research codebase into a production-ready simulation platform.</p>
+        </li>
+        <li class="status-item upcoming">
+          <span class="status-date" aria-hidden="true">2027</span>
+          <h3>Software release</h3>
+          <p>Full release of the operational simulation software.</p>
+        </li>
+      </ol>
+      <p class="reveal" style="color: var(--fg-body); margin-top: 2rem; font-size: 0.95rem;">Want to talk before then? Get in touch below — we're happy to discuss your application.</p>
     </section>
   </div>
 
@@ -1468,7 +1585,7 @@
   <div class="section-divider"></div>
 
   <div class="container">
-    <section id="impressum" class="impressum">
+    <section id="impressum" class="impressum" lang="de">
       <h3>Impressum</h3>
       <div class="impressum-grid">
         <div>
@@ -1496,7 +1613,7 @@
   <footer>
     <div class="container">
       <p>&copy; 2026 inSilicoPhysics GmbH i.Gr. All rights reserved.</p>
-      <p style="margin-top: 0.4rem;"><a href="#impressum" style="color: var(--fg-dim); text-decoration: none; border-bottom: 1px solid var(--border);">Impressum</a></p>
+      <p style="margin-top: 0.4rem;"><a href="#impressum" style="color: var(--fg-muted); text-decoration: none; border-bottom: 1px solid var(--border);">Impressum</a></p>
     </div>
   </footer>
 
@@ -1510,6 +1627,35 @@
     const cards = [...grid.children];
     cards.sort(() => Math.random() - 0.5);
     cards.forEach(card => grid.appendChild(card));
+
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        const menu = document.getElementById('nav-menu');
+        const toggle = document.querySelector('.mobile-toggle');
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.textContent = '☰';
+      });
+    });
+
+    window.toggleNav = function(btn) {
+      const menu = document.getElementById('nav-menu');
+      const isOpen = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+      btn.textContent = isOpen ? '✕' : '☰';
+    };
+
+    window.toggleTeamCard = function(card) {
+      const flipped = card.classList.toggle('flipped');
+      card.setAttribute('aria-pressed', flipped);
+    };
+
+    window.handleTeamCardKey = function(event, card) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        window.toggleTeamCard(card);
+      }
+    };
 
     function sendContact() {
       const name = document.getElementById('cf-name').value.trim();
