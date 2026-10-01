@@ -837,6 +837,8 @@
       text-decoration: none;
     }
     .impressum a:hover { text-decoration: underline; }
+    
+    .legal-page .impressum { padding: 2.5rem 0; }
 
     /* FOOTER */
     footer {
@@ -849,6 +851,14 @@
       color: var(--fg-muted);
       font-family: var(--mono);
     }
+    
+    .footer-link {
+        color: var(--fg-muted);
+        text-decoration: none;
+        border-bottom: 1px solid var(--border);
+    }
+    
+    .footer-link:hover { color: var(--accent); }
 
     .section-divider {
       height: 1px;
