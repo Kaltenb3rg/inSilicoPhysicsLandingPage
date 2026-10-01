@@ -839,6 +839,8 @@
     .impressum a:hover { text-decoration: underline; }
     
     .legal-page .impressum { padding: 2.5rem 0; }
+    
+    #privacy p { margin-bottom: 1rem; }
 
     /* FOOTER */
     footer {
