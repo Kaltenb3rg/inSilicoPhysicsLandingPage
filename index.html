@@ -7,7 +7,7 @@
   <meta name="description" content="High-fidelity multiphysics CFD simulation for laser-based manufacturing. Welding, additive, cutting, ablation — one solver, first principles. No training data, no black box.">
   <meta property="og:title" content="inSilico Physics — Multiphysics Simulation for Laser Processes">
   <meta property="og:description" content="High-fidelity multiphysics simulation for laser welding, additive manufacturing, semiconductor fabrication, and beyond.">
-  <meta property="og:image" content="https://insilicophysics.com/logo.png">
+  <meta property="og:image" content="https://insilicophysics.com/images/logo.png">
   <meta property="og:url" content="https://insilicophysics.com">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -739,19 +739,6 @@
         window.toggleTeamCard(card);
       }
     };
-
-    function sendContact() {
-      const name = document.getElementById('cf-name').value.trim();
-      const email = document.getElementById('cf-email').value.trim();
-      const subject = document.getElementById('cf-subject').value.trim() || 'Website Inquiry';
-      const message = document.getElementById('cf-message').value.trim();
-      const status = document.getElementById('formStatus');
-
-      if (!name || !email || !message) {
-        status.textContent = 'Please fill in all required fields.';
-        status.className = 'form-status error';
-        return;
-      }
 
       const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
       const mailto = `mailto:info@insilicophysics.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
