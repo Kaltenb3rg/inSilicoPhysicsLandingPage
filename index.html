@@ -740,13 +740,6 @@
       }
     };
 
-      const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
-      const mailto = `mailto:info@insilicophysics.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailto;
-
-      status.textContent = 'Opening your email client...';
-      status.className = 'form-status success';
-    }
   </script>
 
 </body>
