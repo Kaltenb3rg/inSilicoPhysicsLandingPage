@@ -11,7 +11,9 @@
   <meta property="og:url" content="https://insilicophysics.com">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="icon" href="images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="images/favicon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,9 +22,8 @@
     <div class="nav-inner">
       <a href="#" class="logo">
         <div class="logo-mark">
-          <img src="images/logo.png" alt="inSilico Physics logo">
+          <img src="images/logo.png" alt="inSilico Physics">
         </div>
-        <span class="logo-word">inSilico Physics</span>
       </a>
       <button class="mobile-toggle" onclick="window.toggleNav(this)" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">☰</button>
       <ul id="nav-menu">
@@ -39,14 +40,164 @@
   <div class="container">
     <section class="hero" id="hero">
       <div class="grid-bg"></div>
+      <div class="hero-inner">
       <div class="hero-content reveal">
         <div class="section-tag">Multiphysics CFD</div>
-        <h1><span class="gradient-text">Stop Guessing. Start Predicting:</span> A Universal Digital Twin for Laser-Based Manufacturing</h1>
-        <p>High-fidelity multiphysics simulation for laser welding, additive manufacturing, semiconductor fabrication, and beyond. Predict defects, optimize parameters, and accelerate development — before you fire the laser.</p>
+        <h1><span class="gradient-text"><span class="nowrap">Stop Guessing.</span> <span class="nowrap">Start Predicting:</span></span><br>A Universal Digital Twin for <span class="nowrap">Laser-Based</span> Manufacturing</h1>
+        <p>High-fidelity multiphysics simulation for laser welding, additive manufacturing, semiconductor fabrication, and beyond. Predict defects, optimize parameters, and accelerate development —<br><span class="hero-punch">before you fire the laser.</span></p>
         <div class="hero-actions">
           <a href="#contact" class="btn btn-accent">Request a Demo</a>
           <a href="#applications" class="btn btn-outline">See Use Cases →</a>
         </div>
+      </div>
+      <figure class="hero-visual reveal">
+        <picture>
+          <source srcset="images/hero-simulation.webp" type="image/webp">
+          <img src="images/hero-simulation.jpg" width="880" height="1269" alt="Two simulations from the same solver: a keyhole during laser welding of copper with pores forming in the melt pool, and an ablation plume and shock wave expanding above a copper surface after an ultrashort laser pulse">
+        </picture>
+        <span class="scale-bar scale-bar-a" aria-hidden="true"><i></i>1 mm</span>
+        <span class="scale-bar scale-bar-b" aria-hidden="true"><i></i>10 µm</span>
+        <span class="hero-label hero-label-a">Keyhole laser welding of copper · ~16&nbsp;ms</span>
+        <span class="hero-label hero-label-b">Ultrashort-pulse ablation of copper · ~18&nbsp;ns</span>
+      </figure>
+      </div>
+    </section>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <div class="container">
+    <section id="videos">
+      <div class="reveal">
+        <div class="section-tag">Media</div>
+        <h2>See it in action</h2>
+        <p class="section-intro">13 simulations across welding, additive manufacturing and pulsed laser processes. Pick one to play it.</p>
+      </div>
+      <div class="media-filters reveal" role="group" aria-label="Filter videos">
+        <button type="button" class="chip active" data-filter="all">All<span class="chip-n">13</span></button>
+        <button type="button" class="chip" data-filter="welding">Welding<span class="chip-n">2</span></button>
+        <button type="button" class="chip" data-filter="additive">Additive<span class="chip-n">3</span></button>
+        <button type="button" class="chip" data-filter="pulsed">Pulsed processes<span class="chip-n">8</span></button>
+      </div>
+      <div class="media-player reveal">
+        <div class="mp-main">
+          <div class="mp-stage" data-id="1187707051">
+            <img class="mp-poster" src="https://i.vimeocdn.com/video/2218596084-13fa9ae1c547e6df0e520346803019235691b41b7f7a80c32039b29233633a53-d?f=webp&region=us" alt="">
+            <button type="button" class="mp-play" aria-label="Play video"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+          </div>
+          <div class="mp-caption">
+            <div class="mp-cap-text">
+              <span class="pl-meta mp-meta">Welding · Copper</span>
+              <h3 class="mp-title">Copper laser welding vs. synchrotron X-ray</h3>
+              <p class="mp-desc">Keyhole welding of copper, compared with in-situ synchrotron X-ray imaging at 20,000&nbsp;fps.</p>
+              <div class="mp-extra"></div>
+          <template id="credits-1187707051">
+            <details class="mp-credits">
+              <summary>Contributors</summary>
+              <dl>
+                <dt>Brandenburg University of Technology Cottbus-Senftenberg, Chair of Joining and Welding Technology</dt>
+                <dd>K. Schricker</dd>
+                <dt>Technische Universität Ilmenau, Production Technology Group</dt>
+                <dd>L. Schmidt, C. Diegel, H. Friedmann, M. Seibold, P. Hellwig, F. Fröhlich, J.P. Bergmann</dd>
+                <dt>COHERENT, Hamburg</dt>
+                <dd>F. Nagel, P. Kallage</dd>
+                <dt>ESRF – The European Synchrotron, Grenoble</dt>
+                <dd>A. Rack, H. Requardt, Y. Chen</dd>
+                <dt>RMIT Centre for Additive Manufacturing, RMIT University, Melbourne</dt>
+                <dd>Y. Chen</dd>
+                <dt>Simulation</dt>
+                <dd>Research Unit of Photonic Technologies, TU Wien</dd>
+              </dl>
+            </details>
+          </template>
+            </div>
+            <div class="mp-nav">
+              <button type="button" class="mp-btn" data-step="-1" aria-label="Previous video">&#8592;</button>
+              <span class="mp-count"><span class="mp-idx">1</span> / <span class="mp-total">13</span></span>
+              <button type="button" class="mp-btn" data-step="1" aria-label="Next video">&#8594;</button>
+            </div>
+          </div>
+        </div>
+        <ol class="mp-list">
+          <li data-cat="welding">
+            <a class="pl-item" href="https://vimeo.com/1187707051" data-id="1187707051" data-desc="Keyhole welding of copper, compared with in-situ synchrotron X-ray imaging at 20,000&amp;nbsp;fps." aria-current="true">
+              <span class="pl-thumb"><img src="https://i.vimeocdn.com/video/2218596084-13fa9ae1c547e6df0e520346803019235691b41b7f7a80c32039b29233633a53-d?f=webp&region=us" alt="" loading="lazy" width="160" height="90"></span>
+              <span class="pl-text"><span class="pl-meta">Welding · Copper</span><span class="pl-title">Copper laser welding vs. synchrotron X-ray</span></span>
+            </a>
+          </li>
+          <li data-cat="welding">
+            <a class="pl-item" href="https://vimeo.com/1224939494" data-id="1224939494" data-desc="A continuous-wave laser held stationary on a Ti6Al4V titanium-alloy plate.">
+              <span class="pl-thumb"><img src="https://i.vimeocdn.com/video/2218595740-80d66feeec2fb71888e19a092d8cef30d05968fdbec10aa59b23ebbe4fcc5344-d?f=webp&region=us" alt="" loading="lazy" width="160" height="90"></span>
+              <span class="pl-text"><span class="pl-meta">Welding · Ti6Al4V</span><span class="pl-title">Stationary continuous-wave illumination</span></span>
+            </a>
+          </li>
+          <li data-cat="additive">
+            <a class="pl-item" href="https://vimeo.com/1225239292" data-id="1225239292" data-desc="Several adjacent PBF-LB/M tracks on a nickel superalloy, compared with experimental results (courtesy of AIDIMME).">
+              <span class="pl-thumb"><img src="https://i.vimeocdn.com/video/2218599153-1c460409ed4362a40873c057767148b33fb575918108331427c974ff2ee98dd7-d?f=webp&region=us" alt="" loading="lazy" width="160" height="90"></span>
+              <span class="pl-text"><span class="pl-meta">Additive · Ni-superalloy</span><span class="pl-title">Multi-track powder bed fusion vs. experiment</span></span>
+            </a>
+          </li>
+          <li data-cat="additive">
+            <a class="pl-item" href="https://vimeo.com/1187707443" data-id="1187707443" data-desc="Three layers of ten tracks each, built up in PBF-LB/M on a nickel superalloy.">
+              <span class="pl-thumb"><img src="https://i.vimeocdn.com/video/2218599738-517adf27c5db7d62e9ad56379577404643a70f1c53c61798a0848271f538d583-d?f=webp&region=us" alt="" loading="lazy" width="160" height="90"></span>
+              <span class="pl-text"><span class="pl-meta">Additive · Ni-superalloy</span><span class="pl-title">Multilayer powder bed fusion</span></span>
+            </a>
+          </li>
+          <li data-cat="additive">
+            <a class="pl-item" href="https://vimeo.com/1225239299" data-id="1225239299" data-desc="A single PBF-LB/M track over individually resolved powder particles of a 7xxx-series aluminium alloy.">
+              <span class="pl-thumb"><img src="https://i.vimeocdn.com/video/2218599352-f56584d6d26ca55b36b409d2471ba085fddf9fa0a3562404938be5568ed7d464-d?f=webp&region=us" alt="" loading="lazy" width="160" height="90"></span>
+              <span class="pl-text"><span class="pl-meta">Additive · Al-7xxx</span><span class="pl-title">Single track with resolved powder</span></span>
+            </a>
+          </li>
+          <li data-cat="pulsed">
+            <a class="pl-item" href="https://vimeo.com/1187707423" data-id="1187707423" data-desc="From free-electron generation to hydrodynamic material removal in a transparent dielectric.">
+              <span class="pl-thumb"><img src="https://i.vimeocdn.com/video/2218595361-98c01c6f32a71a366eedb78e3bc7961b58d9fdf1b279f02dcc7af16c1d6a9f4c-d?f=webp&region=us" alt="" loading="lazy" width="160" height="90"></span>
+              <span class="pl-text"><span class="pl-meta">Ablation · Fused silica</span><span class="pl-title">Picosecond ablation of fused silica</span></span>
+            </a>
+          </li>
+          <li data-cat="pulsed">
+            <a class="pl-item" href="https://vimeo.com/1225239236" data-id="1225239236" data-desc="Picosecond multi-pulse ablation using the measured, non-ideal Gaussian intensity distribution.">
+              <span class="pl-thumb"><img src="https://i.vimeocdn.com/video/2218598632-80405b31404ddcff6b24dadab1055dccc8ee7520fd7ec60a511c4b3b35091137-d?f=webp&region=us" alt="" loading="lazy" width="160" height="90"></span>
+              <span class="pl-text"><span class="pl-meta">Ablation · Copper</span><span class="pl-title">Multi-pulse ablation of copper — Gaussian beam</span></span>
+            </a>
+          </li>
+          <li data-cat="pulsed">
+            <a class="pl-item" href="https://vimeo.com/1225239237" data-id="1225239237" data-desc="The same process with a measured, non-ideal annular (ring-shaped) intensity distribution.">
+              <span class="pl-thumb"><img src="https://i.vimeocdn.com/video/2218601136-33d1529c509a5beb2860718d5d152b1d395e120d1f906b790b0a8f59691b1580-d?f=webp&region=us" alt="" loading="lazy" width="160" height="90"></span>
+              <span class="pl-text"><span class="pl-meta">Ablation · Copper</span><span class="pl-title">Multi-pulse ablation of copper — annular beam</span></span>
+            </a>
+          </li>
+          <li data-cat="pulsed">
+            <a class="pl-item" href="https://vimeo.com/1225239238" data-id="1225239238" data-desc="Femtosecond ablation of a multilayer ceramic coating on glass, for long-term data storage.">
+              <span class="pl-thumb"><img src="https://i.vimeocdn.com/video/2218600081-6559e4b9d9344f385f8166e38d144531b665ae1cc792c7fd94a5a16c57c767d2-d?f=webp&region=us" alt="" loading="lazy" width="160" height="90"></span>
+              <span class="pl-text"><span class="pl-meta">Ablation · Ceramic on glass</span><span class="pl-title">Femtosecond ablation for data storage</span></span>
+            </a>
+          </li>
+          <li data-cat="pulsed">
+            <a class="pl-item" href="https://vimeo.com/1225239294" data-id="1225239294" data-desc="355&amp;nbsp;nm, 50&amp;nbsp;ns pulses at 50&amp;nbsp;µJ, 10&amp;nbsp;µm spot, 250&amp;nbsp;kHz, 670&amp;nbsp;mm/s.">
+              <span class="pl-thumb"><img src="https://i.vimeocdn.com/video/2218595569-bb97d1d5321fa8f6775a74253608be3555619fd7384c08ee596a585cb993d268-d?f=webp&region=us" alt="" loading="lazy" width="160" height="90"></span>
+              <span class="pl-text"><span class="pl-meta">Semiconductor · Silicon</span><span class="pl-title">Pulsed laser ablation of a Si wafer</span></span>
+            </a>
+          </li>
+          <li data-cat="pulsed">
+            <a class="pl-item" href="https://vimeo.com/1225281059" data-id="1225281059" data-desc="Laser scribing of a silicon substrate with 355&amp;nbsp;nm pulses at high pulse energy.">
+              <span class="pl-thumb"><img src="https://i.vimeocdn.com/video/2218600255-d973df2ef73ab8e91b833a45d88d3ef0642d12e36b63356ae447e75eb5ba67eb-d?f=webp&region=us" alt="" loading="lazy" width="160" height="90"></span>
+              <span class="pl-text"><span class="pl-meta">Semiconductor · Silicon</span><span class="pl-title">Si wafer scribing — high power</span></span>
+            </a>
+          </li>
+          <li data-cat="pulsed">
+            <a class="pl-item" href="https://vimeo.com/1225284535" data-id="1225284535" data-desc="355&amp;nbsp;nm, 50&amp;nbsp;ns pulses at 10&amp;nbsp;µJ, 10&amp;nbsp;µm spot, 250&amp;nbsp;kHz, 1670&amp;nbsp;mm/s.">
+              <span class="pl-thumb"><img src="https://i.vimeocdn.com/video/2218585210-fb43d16b34a6e7bfac483f79682dff77ecf98243cee2449c1c416c84372cbd40-d?f=webp&region=us" alt="" loading="lazy" width="160" height="90"></span>
+              <span class="pl-text"><span class="pl-meta">Semiconductor · Silicon</span><span class="pl-title">Si wafer scribing — low power</span></span>
+            </a>
+          </li>
+          <li data-cat="pulsed">
+            <a class="pl-item" href="https://vimeo.com/1225239239" data-id="1225239239" data-desc="Multiple pulses with a top-hat intensity distribution in an aqueous medium.">
+              <span class="pl-thumb"><img src="https://i.vimeocdn.com/video/2218599903-c0c8cb07c027f2e4132adae62d0196ef16e65429c192b3fed9d74486aba7095a-d?f=webp&region=us" alt="" loading="lazy" width="160" height="90"></span>
+              <span class="pl-text"><span class="pl-meta">Medical · Water</span><span class="pl-title">Laser lithotripsy</span></span>
+            </a>
+          </li>
+        </ol>
       </div>
     </section>
   </div>
@@ -57,7 +208,8 @@
     <section id="applications">
       <div class="reveal">
         <div class="section-tag">Applications</div>
-        <h2>Applications</h2>
+        <h2>One solver for laser processing — and beyond</h2>
+        <p class="section-intro">Joining, additive, subtractive and surface processes. Click a process for details.</p>
       </div>
       <div class="app-categories">
 
@@ -67,20 +219,20 @@
             <p>Bringing materials together precisely</p>
           </div>
           <div class="app-sub-list">
-            <div class="app-sub-item">
-              <h4>Laser Welding</h4>
-              <p>Keyhole stability, weld bead geometry, spatter formation, porosity, and hot cracking prediction across joint configurations.</p>
-              <div class="app-tags">
-                <span>Keyhole</span><span>Conduction</span><span>Hybrid</span>
+            <details class="app-sub-item">
+              <summary><h4>Laser Welding</h4><span class="app-toggle" aria-hidden="true">+</span></summary>
+              <div class="app-sub-body">
+                <p>Keyhole stability, weld bead geometry, spatter formation, porosity, and hot cracking prediction across joint configurations.</p>
+                <div class="app-tags"><span>Keyhole</span><span>Conduction</span><span>Hybrid</span></div>
               </div>
-            </div>
-            <div class="app-sub-item">
-              <h4>Laser Brazing</h4>
-              <p>Filler metal flow, wetting behavior, and joint formation with controlled heat input.</p>
-              <div class="app-tags">
-                <span>Wetting</span><span>Capillary flow</span>
+            </details>
+            <details class="app-sub-item">
+              <summary><h4>Laser Brazing</h4><span class="app-toggle" aria-hidden="true">+</span></summary>
+              <div class="app-sub-body">
+                <p>Filler metal flow, wetting behavior, and joint formation with controlled heat input.</p>
+                <div class="app-tags"><span>Wetting</span><span>Capillary flow</span></div>
               </div>
-            </div>
+            </details>
           </div>
         </div>
 
@@ -90,20 +242,20 @@
             <p>Building parts layer by layer, defect-free</p>
           </div>
           <div class="app-sub-list">
-            <div class="app-sub-item">
-              <h4>Powder Bed Fusion</h4>
-              <p>Single-track to multi-layer simulations. Optimize scan strategy, predict lack-of-fusion, balling, and solidification cracking.</p>
-              <div class="app-tags">
-                <span>LPBF</span><span>SLM</span><span>Multi-layer</span>
+            <details class="app-sub-item">
+              <summary><h4>Powder Bed Fusion</h4><span class="app-toggle" aria-hidden="true">+</span></summary>
+              <div class="app-sub-body">
+                <p>Single-track to multi-layer simulations. Optimize scan strategy, predict lack-of-fusion, balling, and solidification cracking.</p>
+                <div class="app-tags"><span>LPBF</span><span>SLM</span><span>Multi-layer</span></div>
               </div>
-            </div>
-            <div class="app-sub-item">
-              <h4>Directed Energy Deposition</h4>
-              <p>Powder and wire-fed DED with coupled particle dynamics, catch efficiency, and clad geometry prediction.</p>
-              <div class="app-tags">
-                <span>L-DED</span><span>Wire-DED</span><span>Cladding</span>
+            </details>
+            <details class="app-sub-item">
+              <summary><h4>Directed Energy Deposition</h4><span class="app-toggle" aria-hidden="true">+</span></summary>
+              <div class="app-sub-body">
+                <p>Powder and wire-fed DED with coupled particle dynamics, catch efficiency, and clad geometry prediction.</p>
+                <div class="app-tags"><span>L-DED</span><span>Wire-DED</span><span>Cladding</span></div>
               </div>
-            </div>
+            </details>
           </div>
         </div>
 
@@ -113,27 +265,34 @@
             <p>Precise material removal at every scale</p>
           </div>
           <div class="app-sub-list">
-            <div class="app-sub-item">
-              <h4>Laser Cutting</h4>
-              <p>Kerf geometry, melt ejection, assist gas interaction, and heat-affected zone prediction.</p>
-              <div class="app-tags">
-                <span>Remote cutting</span><span>Fusion cutting</span>
+            <details class="app-sub-item">
+              <summary><h4>Laser Cutting</h4><span class="app-toggle" aria-hidden="true">+</span></summary>
+              <div class="app-sub-body">
+                <p>Kerf geometry, melt ejection, assist gas interaction, and heat-affected zone prediction.</p>
+                <div class="app-tags"><span>Remote cutting</span><span>Fusion cutting</span></div>
               </div>
-            </div>
-            <div class="app-sub-item">
-              <h4>Laser Drilling</h4>
-              <p>Percussion and trepanning drilling up to high-aspect-ratio hole formation from cw to ultrashort pulse bursts.</p>
-              <div class="app-tags">
-                <span>Percussion</span><span>Trepanning</span><span>Micro-vias</span>
+            </details>
+            <details class="app-sub-item">
+              <summary><h4>Water-Jet-Guided Laser Cutting</h4><span class="app-toggle" aria-hidden="true">+</span></summary>
+              <div class="app-sub-body">
+                <p>Laser light guided by total internal reflection inside a thin water jet. Jet flow, beam guidance, material removal and cooling, coupled in one model.</p>
+                <div class="app-tags"><span>WJGL</span><span>Total internal reflection</span><span>Cooling</span></div>
               </div>
-            </div>
-            <div class="app-sub-item">
-              <h4>Laser Ablation</h4>
-              <p>Surface structuring and material removal from CW to femtosecond timescales on metals, semiconductors and dielectrics.</p>
-              <div class="app-tags">
-                <span>USP</span><span>Surface texturing</span><span>Thin film</span>
+            </details>
+            <details class="app-sub-item">
+              <summary><h4>Laser Drilling</h4><span class="app-toggle" aria-hidden="true">+</span></summary>
+              <div class="app-sub-body">
+                <p>Percussion and trepanning drilling up to high-aspect-ratio hole formation from cw to ultrashort pulse bursts.</p>
+                <div class="app-tags"><span>Percussion</span><span>Trepanning</span><span>Micro-vias</span></div>
               </div>
-            </div>
+            </details>
+            <details class="app-sub-item">
+              <summary><h4>Laser Ablation</h4><span class="app-toggle" aria-hidden="true">+</span></summary>
+              <div class="app-sub-body">
+                <p>Surface structuring and material removal from CW to femtosecond timescales on metals, semiconductors and dielectrics.</p>
+                <div class="app-tags"><span>USP</span><span>Surface texturing</span><span>Thin film</span></div>
+              </div>
+            </details>
           </div>
         </div>
 
@@ -143,27 +302,27 @@
             <p>Modifying surface properties without bulk removal</p>
           </div>
           <div class="app-sub-list">
-            <div class="app-sub-item">
-              <h4>Laser Polishing</h4>
-              <p>Surface remelting for roughness reduction and finish improvement on metallic and glass components.</p>
-              <div class="app-tags">
-                <span>Remelting</span><span>Roughness</span>
+            <details class="app-sub-item">
+              <summary><h4>Laser Polishing</h4><span class="app-toggle" aria-hidden="true">+</span></summary>
+              <div class="app-sub-body">
+                <p>Surface remelting for roughness reduction and finish improvement on metallic and glass components.</p>
+                <div class="app-tags"><span>Remelting</span><span>Roughness</span></div>
               </div>
-            </div>
-            <div class="app-sub-item">
-              <h4>Laser Hardening</h4>
-              <p>Localized heat treatment for wear resistance through controlled martensitic transformation.</p>
-              <div class="app-tags">
-                <span>Phase transformation</span><span>Heat treatment</span>
+            </details>
+            <details class="app-sub-item">
+              <summary><h4>Laser Hardening</h4><span class="app-toggle" aria-hidden="true">+</span></summary>
+              <div class="app-sub-body">
+                <p>Localized heat treatment for wear resistance through controlled martensitic transformation.</p>
+                <div class="app-tags"><span>Phase transformation</span><span>Heat treatment</span></div>
               </div>
-            </div>
-            <div class="app-sub-item">
-              <h4>Laser Cleaning</h4>
-              <p>Contaminant and coating removal through controlled ablation without substrate damage.</p>
-              <div class="app-tags">
-                <span>Decoating</span><span>Derusting</span>
+            </details>
+            <details class="app-sub-item">
+              <summary><h4>Laser Cleaning</h4><span class="app-toggle" aria-hidden="true">+</span></summary>
+              <div class="app-sub-body">
+                <p>Contaminant and coating removal through controlled ablation without substrate damage.</p>
+                <div class="app-tags"><span>Decoating</span><span>Derusting</span></div>
               </div>
-            </div>
+            </details>
           </div>
         </div>
 
@@ -173,34 +332,20 @@
             <p>The same core physics, applied to any laser–matter interaction and beyond</p>
           </div>
           <div class="app-sub-list">
-            <div class="app-sub-item">
-              <h4>Casting Processes</h4>
-              <p>Melt flow, solidification dynamics, and defect prediction in mold filling and directional solidification.</p>
-              <div class="app-tags">
-                <span>Mold filling</span><span>Solidification</span><span>Shrinkage</span>
+            <details class="app-sub-item">
+              <summary><h4>Laser Lithotripsy</h4><span class="app-toggle" aria-hidden="true">+</span></summary>
+              <div class="app-sub-body">
+                <p>Laser-induced cavitation, bubble dynamics, and stone fragmentation modeling for medical applications.</p>
+                <div class="app-tags"><span>Cavitation</span><span>Bubble dynamics</span><span>Medical</span></div>
               </div>
-            </div>
-            <div class="app-sub-item">
-              <h4>Laser Lithotripsy</h4>
-              <p>Laser-induced cavitation, bubble dynamics, and stone fragmentation modeling for medical applications.</p>
-              <div class="app-tags">
-                <span>Cavitation</span><span>Bubble dynamics</span><span>Medical</span>
+            </details>
+            <details class="app-sub-item">
+              <summary><h4>Your Process</h4><span class="app-toggle" aria-hidden="true">+</span></summary>
+              <div class="app-sub-body">
+                <p>If it involves one or more phase changes, energy sources and/or compressible fluid flow, our framework can model it, from casting and mold filling to laser-driven inertial confinement fusion. Get in touch to discuss your application.</p>
+                <div class="app-tags"><span>Custom</span><span>Casting</span><span>Fusion</span><span>R&amp;D</span></div>
               </div>
-            </div>
-            <div class="app-sub-item">
-              <h4>Inertial Confinement Fusion</h4>
-              <p>Laser–target interaction, plasma formation, and implosion dynamics at extreme energy densities.</p>
-              <div class="app-tags">
-                <span>Plasma</span><span>Implosion</span><span>High energy density</span>
-              </div>
-            </div>
-            <div class="app-sub-item">
-              <h4>Your Process</h4>
-              <p>If it involves one or more phase changes, energy sources and/or compressible fluid flow, our framework can model it. Get in touch to discuss your application.</p>
-              <div class="app-tags">
-                <span>Custom</span><span>R&D</span>
-              </div>
-            </div>
+            </details>
           </div>
         </div>
 
@@ -215,7 +360,7 @@
       <div class="reveal">
         <div class="section-tag">Technology</div>
         <h2>Simulation engine</h2>
-        <p style="color: var(--fg-muted); max-width: 1000px; font-size: 1.05rem;">One solver, fully coupled — from the light source through the material response, with no simplifications in between.</p>
+        <p class="section-intro">One solver, fully coupled — from the light source through the material response, with no simplifications in between.</p>
       </div>
       <div class="cap-grid">
 
@@ -231,7 +376,7 @@
           </div>
           <h3>Compressible Fluid Dynamics</h3>
           <p>Navier–Stokes solver for compressible multiphase flow including all condensed and gaseous phases with multi-material capabilities.</p>
-          <span class="cap-tag">Navier–Stokes · MOF · Multiphase</span>
+          <div class="cap-tags"><span>Navier–Stokes</span><span>MOF</span><span>Multiphase</span></div>
         </div>
 
         <div class="cap-card reveal">
@@ -242,7 +387,7 @@
           </div>
           <h3>Phase Transition</h3>
           <p>Fully coupled melting, solidification, vaporization, and ionization with temperature-dependent thermophysical properties and interface tracking across all phase boundaries.</p>
-          <span class="cap-tag">Solid · Liquid · Gas · Plasma</span>
+          <div class="cap-tags"><span>Solid</span><span>Liquid</span><span>Gas</span><span>Plasma</span></div>
         </div>
 
         <div class="cap-card reveal">
@@ -253,7 +398,7 @@
           </div>
           <h3>Heat Transport</h3>
           <p>Convective and diffusive heat transfer and volumetric energy source. Implicit treatment of latent heat of fusion, vaporization and ionization.</p>
-          <span class="cap-tag">Convection · Diffusion · Enthalpy</span>
+          <div class="cap-tags"><span>Convection</span><span>Diffusion</span><span>Enthalpy</span></div>
         </div>
 
         <div class="cap-card reveal">
@@ -264,7 +409,7 @@
           </div>
           <h3>Beam Propagation</h3>
           <p>Caustic-aware beam propagation, transmission, absorption, reflection, and refraction on continuum grids and GPU-accelerated ray-tracing starting from every imaginable beam shape.</p>
-          <span class="cap-tag">Ray-tracing · Fresnel · Beam-shaping</span>
+          <div class="cap-tags"><span>Ray-tracing</span><span>Fresnel</span><span>Beam-shaping</span></div>
         </div>
 
         <div class="cap-card reveal">
@@ -275,7 +420,7 @@
           </div>
           <h3>Surface Tension</h3>
           <p>Full implicit treatment of surface tension across all phases, Marangoni-driven convection, and capillary forces</p>
-          <span class="cap-tag">Marangoni · Wetting behavior · Capillary</span>
+          <div class="cap-tags"><span>Marangoni</span><span>Wetting behavior</span><span>Capillary</span></div>
         </div>
 
         <div class="cap-card reveal">
@@ -286,7 +431,7 @@
           </div>
           <h3>Implicit Pressure Treatment</h3>
           <p>Non-phenomenological recoil pressure with full implicit coupling of gaseous phases. No artificial pressure boundary conditions — the vapor dynamics emerge directly from first-principles thermodynamics.</p>
-          <span class="cap-tag">Non-phenomenological · First-principles</span>
+          <div class="cap-tags"><span>Non-phenomenological</span><span>First-principles</span></div>
         </div>
 
       </div>
@@ -295,45 +440,6 @@
 
   <div class="section-divider"></div>
 
-  <div class="container">
-    <section id="videos">
-      <div class="reveal">
-        <div class="section-tag">Media</div>
-        <h2>See it in action</h2>
-      </div>
-      <div class="video-grid">
-        <div class="video-card reveal">
-          <div class="embed-wrap">
-            <iframe src="https://player.vimeo.com/video/1187707051?autoplay=1&loop=1&muted=1&background=1&dnt=1" loading="lazy" allowfullscreen title="Copper Laser Welding — Simulation vs. Synchrotron X-ray at 20,000 fps"></iframe>
-          </div>
-          <div class="video-meta">
-            <h3>Copper Laser Welding</h3>
-            <p>Simulation vs. Synchrotron X-ray at 20,000 fps</p>
-          </div>
-        </div>
-        <div class="video-card reveal">
-          <div class="embed-wrap">
-            <iframe src="https://player.vimeo.com/video/1187707443?autoplay=1&loop=1&muted=1&background=1&dnt=1" loading="lazy" allowfullscreen title="Multilayer Powder Bed Fusion — Simulated from First Principles"></iframe>
-          </div>
-          <div class="video-meta">
-            <h3>Multilayer Powder Bed Fusion</h3>
-            <p>Simulated from First Principles</p>
-          </div>
-        </div>
-        <div class="video-card reveal">
-          <div class="embed-wrap">
-            <iframe src="https://player.vimeo.com/video/1187707423?autoplay=1&loop=1&muted=1&background=1&dnt=1" loading="lazy" allowfullscreen title="Picosecond Laser Ablation of Fused Silica — From Free Electrons to Hydrodynamic Removal"></iframe>
-          </div>
-          <div class="video-meta">
-            <h3>Picosecond Laser Ablation of Fused Silica</h3>
-            <p>From Free Electrons to Hydrodynamic Removal</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <div class="section-divider"></div>
 
   <div class="container">
     <section id="team">
@@ -433,10 +539,11 @@
       </div>
       <ul class="pub-list">
 
-        <li class="pub-item reveal">
+        <li class="pub-item pub-featured reveal">
           <button type="button" class="pub-header" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))" aria-expanded="false">
             <span class="pub-year">2025</span>
             <div>
+              <span class="pub-badge">Overview paper</span>
               <div class="pub-title">Universal Numerical Simulation Model for Laser Material Processing</div>
               <div class="pub-description">The full methodology behind the simulation framework</div>
             </div>
@@ -446,6 +553,23 @@
             <div class="pub-body-inner">
               <p class="pub-abstract">High power lasers are used for a variety of manufacturing processes on time and length scales that cover many orders of magnitude and on different materials. The variety of processes achievable through laser-material interaction results from numerous coupled, nonlinear physical phenomena. Within this chapter, a universal model is presented that accurately simulates a broad spectrum of processes, including welding, additive manufacturing, cutting, ablation, drilling, and surface structuring, encompassing both continuous wave and ultrashort pulsed lasers and their interaction with various materials. Starting from the fundamental principles of conservation of mass, momentum, and energy, a continuum mechanical framework is introduced that captures the main multiphysical effects.</p>
               <a href="https://arxiv.org/abs/2509.22666" class="pub-link" target="_blank" rel="noopener">Read on arXiv ↗</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="pub-item reveal">
+          <button type="button" class="pub-header" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))" aria-expanded="false">
+            <span class="pub-year">2026</span>
+            <div>
+              <div class="pub-title">Ultrashort pulse laser ablation of dielectrics: Bridging the "bandgap" from free electron generation to hydrodynamic ablation</div>
+              <div class="pub-description">From free electron generation to hydrodynamic ablation in glass</div>
+            </div>
+            <span class="pub-toggle">+</span>
+          </button>
+          <div class="pub-body">
+            <div class="pub-body-inner">
+              <p class="pub-abstract">This work bridges the gap between ultrafast electronic excitation and macroscopic material removal in dielectric materials. A comprehensive simulation framework couples free electron generation via multiphoton and avalanche ionization with the subsequent hydrodynamic response of the material, capturing the full chain of events from initial laser absorption through to ablation crater formation. The model is validated against experimental ablation data for glass substrates processed with femtosecond laser pulses.</p>
+              <a href="https://pubs.aip.org/lia/jla/article/38/2/022019/3386560/Ultrashort-pulse-laser-ablation-of-dielectrics" class="pub-link" target="_blank" rel="noopener">Read paper ↗</a>
             </div>
           </div>
         </li>
@@ -480,23 +604,6 @@
             <div class="pub-body-inner">
               <p class="pub-abstract">Laser beam welding has emerged as a powerful tool for manufacturing copper components in electrical vehicles, electronic devices or energy storage, owing to its rapid processing capabilities. Nonetheless, the material's high thermal conductivity and low absorption of infrared light can introduce process instabilities, resulting in defects such as pores. This study employs a hybrid approach that combines in situ synchrotron X-ray imaging with compressible multiphysics process simulation to elucidate pore-forming mechanisms during laser beam welding of copper. The findings show that pore formation is driven by four different mechanisms: bulging, spiking, upwelling waves at the keyhole rear wall and melt pool ejections.</p>
               <a href="https://www.sciencedirect.com/science/article/pii/S089069552400110X" class="pub-link" target="_blank" rel="noopener">Read paper ↗</a>
-            </div>
-          </div>
-        </li>
-
-        <li class="pub-item reveal">
-          <button type="button" class="pub-header" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))" aria-expanded="false">
-            <span class="pub-year">2026</span>
-            <div>
-              <div class="pub-title">Ultrashort pulse laser ablation of dielectrics: Bridging the "bandgap" from free electron generation to hydrodynamic ablation</div>
-              <div class="pub-description">From free electron generation to hydrodynamic ablation in glass</div>
-            </div>
-            <span class="pub-toggle">+</span>
-          </button>
-          <div class="pub-body">
-            <div class="pub-body-inner">
-              <p class="pub-abstract">This work bridges the gap between ultrafast electronic excitation and macroscopic material removal in dielectric materials. A comprehensive simulation framework couples free electron generation via multiphoton and avalanche ionization with the subsequent hydrodynamic response of the material, capturing the full chain of events from initial laser absorption through to ablation crater formation. The model is validated against experimental ablation data for glass substrates processed with femtosecond laser pulses.</p>
-              <a href="https://pubs.aip.org/lia/jla/article/38/2/022019/3386560/Ultrashort-pulse-laser-ablation-of-dielectrics" class="pub-link" target="_blank" rel="noopener">Read paper ↗</a>
             </div>
           </div>
         </li>
@@ -612,33 +719,34 @@
   <div class="container">
     <section id="partners" class="partners">
       <div class="reveal">
-        <h2>Partners</h2>
+        <div class="section-tag">Partners &amp; Funding</div>
+        <h2>Who we work with</h2>
       </div>
-      <div class="partners-grid reveal">
-        <a href="https://www.tuwien.at" target="_blank" rel="noopener" class="partner-logo">
-          <img src="images/tuwien_logo.png" alt="TU Wien Logo">
-        </a>
-        <a href="https://www.spinoff-factory.at" target="_blank" rel="noopener" class="partner-logo">
-          <img src="images/spinoff_factory_logo.png" alt="Spinoff Factory Logo">
-        </a>
+      <div class="partner-groups reveal">
+        <div class="partner-group">
+          <div class="partner-label">Partners</div>
+          <div class="partners-grid">
+            <a href="https://www.tuwien.at" target="_blank" rel="noopener" class="partner-logo">
+              <img src="images/tuwien_logo.png" alt="TU Wien">
+            </a>
+            <a href="https://www.spinoff-factory.at" target="_blank" rel="noopener" class="partner-logo">
+              <img src="images/spinoff_factory_logo.png" alt="Spinoff Factory">
+            </a>
+          </div>
+        </div>
+        <div class="partner-group">
+          <div class="partner-label">Funded by</div>
+          <div class="partners-grid">
+            <a href="https://www.aws.at/en" target="_blank" rel="noopener" class="partner-logo">
+              <img src="images/awsLogo.png" alt="aws – Austria Wirtschaftsservice">
+              <span class="partner-program">aws Preseed –<br>Deep Tech</span>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   </div>
 
-  <div class="section-divider"></div>
-  
-  <div class="container">
-    <section id="supporters" class="partners">
-      <div class="reveal">
-        <h2>funded by</h2>
-      </div>
-      <div class="partners-grid reveal">
-        <a href="https://www.aws.at/en" target="_blank" rel="noopener" class="partner-logo">
-          <img src="images/awsLogo.png" alt="aws Logo">
-        </a>
-      </div>
-    </section>
-  </div>
 
   <div class="section-divider"></div>
 
@@ -679,7 +787,10 @@
 
   <div class="container">
   <section id="contact">
-  <h2>Get in touch with us:</h2>
+  <div class="reveal">
+    <div class="section-tag">Contact</div>
+    <h2>Get in touch</h2>
+  </div>
   <iframe
     src="https://tally.so/embed/9qb4RY?alignLeft=1&hideTitle=1&transparentBackground=1"
     loading="lazy"
@@ -743,6 +854,73 @@
         window.toggleTeamCard(card);
       }
     };
+
+    // ---- Media player: one active Vimeo embed + playlist ----
+    (function () {
+      const root = document.querySelector('.media-player');
+      if (!root) return;
+      const stage = root.querySelector('.mp-stage');
+      const list = root.querySelector('.mp-list');
+      const links = [...list.querySelectorAll('.pl-item')];
+      const $ = s => root.querySelector(s);
+      let current = 0, started = false;
+      { const t = document.getElementById('credits-' + links[0].dataset.id); if (t) $('.mp-extra').append(t.content.cloneNode(true)); }
+
+      const visible = () => links.filter(a => !a.parentElement.hidden);
+      const src = id => `https://player.vimeo.com/video/${id}?autoplay=1&muted=1&loop=1&dnt=1&title=0&byline=0&portrait=0&color=3b9eff`;
+
+      function embed(id) {
+        stage.innerHTML = `<iframe src="${src(id)}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="${links[current].querySelector('.pl-title').textContent}"></iframe>`;
+        started = true;
+      }
+      function select(i, play) {
+        current = i;
+        const a = links[i];
+        links.forEach(l => l.removeAttribute('aria-current'));
+        a.setAttribute('aria-current', 'true');
+        $('.mp-meta').textContent = a.querySelector('.pl-meta').textContent;
+        $('.mp-title').textContent = a.querySelector('.pl-title').textContent;
+        $('.mp-desc').innerHTML = a.dataset.desc;
+        const extra = $('.mp-extra'), tpl = document.getElementById('credits-' + a.dataset.id);
+        extra.replaceChildren(tpl ? tpl.content.cloneNode(true) : '');
+        const vis = visible();
+        $('.mp-idx').textContent = vis.indexOf(a) + 1;
+        $('.mp-total').textContent = vis.length;
+        stage.dataset.id = a.dataset.id;
+        if (play || started) embed(a.dataset.id);
+        // keep the active item in view inside the list (without scrolling the page)
+        const li = a.parentElement;
+        if (window.matchMedia('(max-width: 860px)').matches) {
+          list.scrollTo({ left: li.offsetLeft - list.offsetLeft - 16, behavior: 'smooth' });
+        } else {
+          list.scrollTo({ top: li.offsetTop - list.offsetTop - 8, behavior: 'smooth' });
+        }
+      }
+
+      links.forEach((a, i) => a.addEventListener('click', e => { e.preventDefault(); select(i, true); }));
+      stage.addEventListener('click', () => { if (!started) embed(stage.dataset.id); });
+      root.querySelectorAll('.mp-btn').forEach(b => b.addEventListener('click', () => {
+        const vis = visible();
+        const k = (vis.indexOf(links[current]) + Number(b.dataset.step) + vis.length) % vis.length;
+        select(links.indexOf(vis[k]), true);
+      }));
+
+      document.querySelectorAll('.media-filters .chip').forEach(chip => chip.addEventListener('click', () => {
+        document.querySelectorAll('.media-filters .chip').forEach(c => c.classList.toggle('active', c === chip));
+        const f = chip.dataset.filter;
+        links.forEach(a => a.parentElement.hidden = !(f === 'all' || a.parentElement.dataset.cat === f));
+        const vis = visible();
+        if (!vis.includes(links[current])) select(links.indexOf(vis[0]), started);
+        else { $('.mp-idx').textContent = vis.indexOf(links[current]) + 1; $('.mp-total').textContent = vis.length; }
+      }));
+
+      // start the first video muted once the section scrolls into view
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        new IntersectionObserver((es, o) => {
+          if (es[0].isIntersecting) { if (!started) embed(stage.dataset.id); o.disconnect(); }
+        }, { threshold: 0.4 }).observe(stage);
+      }
+    })();
 
   </script>
 
